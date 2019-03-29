@@ -13,7 +13,12 @@
   "author": "a-serna",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "jquery": "^3.3.1",
+    "mdbootstrap": "^4.7.5",
+    "popper.js": "^1.14.7",
     "yargs": "^13.2.2"
   }
 }
