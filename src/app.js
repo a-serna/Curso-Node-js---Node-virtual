@@ -7,14 +7,10 @@ require('./helpers');
 // esta ruta permite tener accedo a la carpeta node modules
 const dirNode_modules = path.join(__dirname , '../node_modules')
 
-// rutas de bootstrap y mdbootstrap css
+// rutas de mdbootstrap
 app.use('/css', express.static(dirNode_modules + '/mdbootstrap/css'));
-// app.use('/css', express.static(dirNode_modules + '/mdbootstrap/css'));
-// rutas de bootstrap y mdbootstrap js
 app.use('/js', express.static(dirNode_modules + '/mdbootstrap/js'));
-// app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
-// app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
-// app.use('/js', express.static(dirNode_modules + '/mdbootstrap/js'));
+
 
 const directoriopublico = path.join(__dirname, '../public' );
 const directoriopartials = path.join(__dirname, '../partials' );
@@ -32,6 +28,18 @@ app.get('/cursos',(req, res) =>{
     curso: 'inglés'
   });
 });
+
+app.get('/registro', (req, res) =>{
+	res.render('registro')
+})
+
+app.get('/usuarios', (req, res) =>{
+	res.render('usuarios')
+})
+
+app.get('/error', (req, res) =>{
+	res.render('error')
+})
 
 app.listen(3000, () => {
   console.log ('escuchando en el puerto')
