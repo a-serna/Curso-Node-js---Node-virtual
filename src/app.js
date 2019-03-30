@@ -21,7 +21,7 @@ app.set ('view engine', 'hbs');
 
 app.get('/', (req, res) =>{
   res.render('index')
-})
+});
 
 app.get('/cursos',(req, res) =>{
   res.render('cursos',{
@@ -31,15 +31,15 @@ app.get('/cursos',(req, res) =>{
 
 app.get('/registro', (req, res) =>{
 	res.render('registro')
-})
+});
 
 app.get('/usuarios', (req, res) =>{
 	res.render('usuarios')
-})
+});
 
 app.get('/error', (req, res) =>{
 	res.render('error')
-})
+});
 
 app.listen(3000, () => {
   console.log ('escuchando en el puerto')
