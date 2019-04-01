@@ -5,90 +5,95 @@ const app = express();
 //file system
 const fs = require('fs');
 
-listaCursos = [];
 
-hbs.registerHelper('crear', (id, nombre, descripcion, valor, modalidad, intensidad) => {
-	listar();
-	let curso = {
-		idC: id,
-		nombreC: nombre,
-		descripcionC: descripcion,
-		valorC: valor,
-		modalidadC: modalidad,
-		instensidadC:intensidad,
-		estado: "disponible"
+//  Funciones de los Usuarios
+listaUsuarios = [];
+
+hbs.registerHelper('crearU', ( nombre, email, cedula, telefono) => {
+	listarU();
+	let U = {
+		
+		nombre: nombre,
+		email: email,
+		cedula: cedula,
+		telefono: telefono,
+		tipo: "aspirante"
 	};
-	let replica = listaCursos.find(ced => ced.idC == id)
+	let replica = listaUsuarios.find(ced=> ced.cedU == cedula)
 	if (!replica) {
-		listaCursos.push(curso);
-		console.log(listaCursos);
-		guardar();
-		console.log('Curso registrado con exito');
+		listaUsuarios.push(U);
+		console.log(listaUsuarios);
+		guardarU();
+		console.log('Usuario registrado con exito');
 	}
 	else
-		console.log(`Ya Existe otro curso con ese ID`);
+		console.log(`Ya Existe otro usuario con esa cedula`);
 
 
 });
 
 
 
-hbs.registerHelper('listar', () => {
-    listaCursos = require('../listaCursos.json')
+hbs.registerHelper('listarUsu', () => {
+    listaUsuarios = require('./listaUsuarios.json')
     let texto = '<table class="table table-sm table-dark">\
 	<thead>\
 	  <tr>\
-		<th scope="col">Id</th>\
 		<th scope="col">Nombre</th>\
-		<th scope="col">Descripcion</th>\
-		<th scope="col">Valor</th>\
-   	<th scope="col">Modalidad</th>\
-		<th scope="col">Intensidad</th>\
-		<th scope="col">Estado</th>\
+		<th scope="col">Email</th>\
+		<th scope="col">Cedula</th>\
+   	<th scope="col">Telefono</th>\
+		<th scope="col">Tipo Usuario</th>\
 	  </tr>\
 	</thead>\
 	<tbody>'
 
-    listaCursos.forEach(curso => {
+    listaUsuarios.forEach(usu => {
 		texto = `${texto}
         '<tr>'
-        <td> ${curso.idC}</td>
-        <td> ${curso.nombreC}</td>
-        <td> ${curso.descripcionC}</td>
-		<td> ${curso.valorC}</td>
-		<td> ${curso.modalidadC}</td>
-		<td> ${curso.instensidadC}</td>
-		<td> ${curso.estado}</td>
+        <td> ${usu.nombreU}</td>
+        <td> ${usu.emailU}</td>
+        <td> ${usu.cedulaU}</td>
+		<td> ${usu.telefonoU}</td>
+		<td> ${usu.tipo}</td>
     </tr>`
     });
     texto = `${texto}</tbody></table> `
     return texto;
 })
 
-const listar = () => {
+const listarU = () => {
 	try {
-	listaCursos = require('../listaCursos.json');
+	listaUsuarios = require('./listaUsuarios.json');
 	} catch (error) {
-		listaCursos = [];
+		listaUsuarios = [];
 	}
 		
 	// listaCursos = JSON.parse(fs.readFileSync('/../src/listaCursos.json'))
 }
 
 
-const guardar = () => {
+const guardarU = () => {
 	//guardamos el array en el archivo json
-	let datos = JSON.stringify(listaCursos);
-	fs.writeFile('../listaCursos.json', datos, (err) => {
+	let datos = JSON.stringify(listaUsuarios);
+	fs.writeFile('./listaUsuarios.json', datos, (err) => {
 		if (err) throw (err);
-		console.log(`Archivo de cursos creado con exito`);
+		console.log(`Archivo de Usuarios creado con exito`);
 	})
 }
+
+
+
+
+
+// Funciones de los cursos
+
+
 //funcion que guarda el usuario en el archivo .json
 
 // hbs.registerHelper('validarLogin', (cedulau, nombre) => {
 
-// 	listar();
+// 	listarCursos();
 // 	let usu_cedula = listaCursos.find(usu => usu.cedulau == cedulau);
 // 	let usu_nombre = listaCursos.find(usu => usu.nombre == nombre);
 // 	if (!usu_cedula || !usu_nombre) {

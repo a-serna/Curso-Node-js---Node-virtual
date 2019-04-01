@@ -2,8 +2,8 @@
 
     <div class="container bg-secondary py-5 text-center">
     <div class="row d-flex justify-content-center">
-           <a class="text-white btn btn-primary mx-2" href="/registro">Crear Curso</a>
-           <a class="text-white btn btn-primary mx-2" href="/listacursos">Lista de Cursos</a>
+           {{!-- <a class="text-white btn btn-primary mx-2" href="/registro">Crear Curso</a>
+           <a class="text-white btn btn-primary mx-2" href="/listacursos">Lista de Cursos</a> --}}
             
     </div>
     
@@ -14,7 +14,7 @@
     <h3 class="mb-5">Registro de Cursos</h3>
     <div class="row d-flex justify-content-center ">
 
-        <form action="Cursos" method="post">
+        <form action="cursos" method="post">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <input class="form-control" type="text" name="id" placeholder="Id de Curso" required>
@@ -47,7 +47,7 @@
                         <option>30 horas</option>
                         <option>40 horas</option>
                         <option>80 horas</option>
-                    </select><label for="">Intensidad</label>
+                    </select><label for="">Intensidad Horaria</label>
                 </div>
 
                 
@@ -59,11 +59,8 @@
         </form>
 
     </div>
-    <div class="row">
-        <p id="mensaje"></p>
-    </div>
+  
 </div>
 
-{{!-- {{listaCursos id nombre descripcion valor modalidad intensidad estado}} --}}
 
 {{>footer}}

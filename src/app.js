@@ -34,26 +34,45 @@ app.get('/', (req, res) =>{
 
 
 // Página de lista de usuarios
-app.get('/usuarios', (req, res) =>{
+app.post('/usuarios', (req, res) =>{
 	res.render('usuarios')
 });
 
 // página de registro de usuario
-// app.get('/registro', (req, res) =>{
-// 	res.render('registro'),
-// 	res.redirect('/home')
-// });
+app.post('/listacursos',(req,res) => {
+	res.render('listacursos',{
+		id : req.body.id,
+		nombre : req.body.nombre,
+		descripcion : req.body.descripcion,
+		valor : req.body.valor,
+		modalidad : req.body.modalidad,
+		intensidad : req.body.intensidad
+
+	});
+	res.redirect('/home');
+});
 
 
 
-app.get('/home',(req,res) => {
+app.get('/registro', (req, res) =>{
+	res.render('registro',{
+		nombre : req.body.nombre,
+		email : req.body.email,
+		cedula : req.body.cedula,
+		telefono : req.body.telefono
+	});
+});
+
+
+
+app.post('/home',(req,res) => {
 	res.render('home')
 });
 
 
 // VISTAS DE CURSOS
 // Página de listado de cursos y registro
-app.get('/cursos',(req, res) =>{
+app.post('/cursos',(req, res) =>{
   res.render('cursos')
 });
 
@@ -65,6 +84,10 @@ app.post('/validaLogin',(req,res) => {
 		nombre: req.body.nombre
 	});
 });
+
+
+
+
 
 
 // Página de Registro de cursos

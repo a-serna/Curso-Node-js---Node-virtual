@@ -2,79 +2,21 @@
 
 <div class="row mt-3">
     <div class="col-lg-6 col-12 mx-auto mt-5 mb-5">
-       <form action="home" method="post" class="text-center border border-light p-5">
+       <form action="usuarios" method="post" class="text-center border border-light p-5">
             <p class="h4 mb-4">Registrarme</p>
             {{!-- nombre --}}
-            <input name='nombreUsuario' type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="Nombre">
+            <input name='nombre' type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="Nombre">
             <!-- E-mail -->
-            <input name='emailUsuario' type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <input name='email' type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
             <!-- Password -->
-            <input name='cedulaUsuario' type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Documento de identidad" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+            <input name='cedula' type="text" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Documento de identidad" aria-describedby="defaultRegisterFormPasswordHelpBlock">
             <!-- Phone number -->
-            <input name='telefonoUsuario' type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Telefono" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+            <input name='telefono' type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Telefono" aria-describedby="defaultRegisterFormPhoneHelpBlock">
             <!-- Sign up button -->
             <button class="btn btn-info mt-4 btn-block" type="submit">Registrar</button>
         </form>
     </div>
 </div>
-
-<!-- Default form register -->
-{{!-- registrar usuario --}}
-{{!-- <div class="container bg-light p-5 text-center">
-    <h3 class="mb-5">Registro de Usuario</h3>
-    <div class="row d-flex justify-content-center ">
-
-        <form action="registra" method="post">
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <input class="form-control" type="text" name="id" placeholder="Id de Curso" required>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre de Curso">
-                </div>
-                <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" name="valor" placeholder="Valor" required>
-                </div>
-
-                <div class="col-md-4 mb-3">
-
-                    <select  class="form-control" name="modalidad" id="exampleFormControlSelect1">
-                        <option>Presencial</option>
-                        <option>SemiPresencial</option>
-                        <option>Virtual</option>
-                    </select><label for="">Modalidad</label>
-                </div>
-
-                <div class="col-md-4 mb-3">
-
-                   <select  class="form-control" name="intensidad" id="exampleFormControlSelect1">
-                        <option>32 Horas</option>
-                        <option>20 horas</option>
-                        <option>30 horas</option>
-                        <option>40 horas</option>
-                        <option>80 horas</option>
-                    </select><label for="">Intensidad</label>
-                </div>
-
-                
-            </div>
-
-
-
-            <button class="btn btn-warning" type="submit">Enviar</button>
-        </form>
-
-    </div>
-    <div class="row">
-        <p id="mensaje"></p>
-    </div>
-</div> --}}
-
-
 
 
 {{>footer}}
