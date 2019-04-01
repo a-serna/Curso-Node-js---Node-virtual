@@ -1,10 +1,8 @@
 const hbs = require('hbs');
 const express = require('express');
 const app = express();
-
 //file system
 const fs = require('fs');
-
 
 //  Funciones de los Usuarios
 listaUsuarios = [];
@@ -12,7 +10,6 @@ listaUsuarios = [];
 hbs.registerHelper('crearU', ( nombre, email, cedula, telefono) => {
 	listarU();
 	let U = {
-		
 		nombre: nombre,
 		email: email,
 		cedula: cedula,
@@ -68,7 +65,7 @@ const listarU = () => {
 	} catch (error) {
 		listaUsuarios = [];
 	}
-		
+
 	// listaCursos = JSON.parse(fs.readFileSync('/../src/listaCursos.json'))
 }
 
@@ -99,13 +96,8 @@ const guardarU = () => {
 // 	if (!usu_cedula || !usu_nombre) {
 // 		return "El usuario con el que intenta ingresar no existe";
 // 	} else {
-	
+
 // 		console.log("Bienvenido");
-		 
+
 // 	}
 // });
-
-
-
-
-
