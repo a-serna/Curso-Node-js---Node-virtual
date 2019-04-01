@@ -1,28 +1,17 @@
-{{>header}}
-<!-- Default form login -->
-
-<div class="row">
-	<div class="col-lg-6 mx-auto mt-5 mb-5">
-		<form class="text-center border border-light p-5">
-
-    <p class="h4 mb-4">Ingresar</p>
-
-    <!-- Email -->
-    <input type="Nombre" id="defaultLoginFormname" class="form-control mb-4" placeholder="Nombre" required>
-
-    <!-- Password -->
-    <input type="Contraseña" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Contraseña" required>
-
-    <!-- Sign in button -->
-    <button class="btn btn-info btn-block my-4" type="submit">Ingresar</button>
-
-    <!-- Register -->
-    <p>Not a member?
-        <a href="/registro">Registrarme</a>
-    </p>
-
-</form>
-	</div>
-</div>
-
+{{>header2}}
+        <div class="row">
+        	<div class="col-lg-6 col-12 mx-auto mt-5 mb-5">
+        		<form action="validaLogin" method="post" class="text-center border border-light p-5">
+                    <p class="h4 mb-4">Ingresar</p>
+                    <!-- Nombre -->
+                    <input type="nombre" id="defaultLoginFormname" class="form-control mb-4" placeholder="Nombre" required>
+                    <!-- Cedula -->
+                    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Cedula" required>
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4" type="submit">Ingresar</button>
+                    <!-- Register -->
+                    <a class="text-white btn btn-info btn-block" href="/registro">Registrarme</a>
+                </form>
+        	</div>
+        </div>
 {{>footer}}

@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/home">Navbar</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -34,27 +34,37 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Ingresar
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" href="/cursos">Cursos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/usuarios">Usuarios</a>
       </li>
+      {{!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="cursoslink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Cursos</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="cursoslink">
+          <a class="dropdown-item" href="/cursos">Lista de cursos</a>
+          <a class="dropdown-item" href="/cursos">Agregar cursos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="usuariosLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Usuarios</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="usuariosLink">
+          <a class="dropdown-item" href="/usuarios">Lista de usuarios</a>
+          <a class="dropdown-item" href="/usuarios">Agregar usuarios</a>
+        </div>
+      </li> --}}
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/.l">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Inscripción</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/">Log out</a>
       </li>
 
     </ul>
