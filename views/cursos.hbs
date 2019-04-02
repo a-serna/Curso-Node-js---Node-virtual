@@ -1,20 +1,12 @@
 {{>header}}
 
-    <div class="container bg-secondary py-5 text-center">
-    <div class="row d-flex justify-content-center">
-           {{!-- <a class="text-white btn btn-primary mx-2" href="/registro">Crear Curso</a>
-           <a class="text-white btn btn-primary mx-2" href="/listacursos">Lista de Cursos</a> --}}
-            
-    </div>
-    
-</div>
 
-{{!-- registrar curso --}}
-<div class="container bg-light p-5 text-center">
+<div class="container bg-light p-5 text-center
+">
     <h3 class="mb-5">Registro de Cursos</h3>
     <div class="row d-flex justify-content-center ">
 
-        <form action="cursos" method="post">
+        <form action="crearcursos" method="post">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <input class="form-control" type="text" name="id" placeholder="Id de Curso" required>
@@ -39,7 +31,7 @@
                     </select><label for="">Modalidad</label>
                 </div>
 
-                <div class="col-md-6 mb-3">
+                <div class="col-md-4 mb-3">
 
                    <select  class="form-control" name="intensidad" id="exampleFormControlSelect1">
                         <option>32 Horas</option>
@@ -47,7 +39,7 @@
                         <option>30 horas</option>
                         <option>40 horas</option>
                         <option>80 horas</option>
-                    </select><label for="">Intensidad Horaria</label>
+                    </select><label for="">Intensidad</label>
                 </div>
 
                 
@@ -59,8 +51,16 @@
         </form>
 
     </div>
-  
+    <div class="row">
+        <p id="mensaje"></p>
+    </div>
 </div>
 
+
+<div class="container">
+	<div class="row">
+		{{{listarC}}}
+	</div>	
+</div>
 
 {{>footer}}

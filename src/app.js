@@ -29,18 +29,26 @@ app.get('/', (req, res) =>{
 
 
 
+
+app.get('/listacursos', (req, res) =>{
+  res.render('listacursos')
+});
+
+
 // Al hacer un registro o hacer un login me envia a esta vista
 //pagina de Home
 
 
-// Página de lista de usuarios
-app.post('/usuarios', (req, res) =>{
-	res.render('usuarios')
+
+
+app.get('/cursos',(req,res) => {
+	res.render('cursos',{
+		estudiante: 'error'
+	});
 });
 
-// página de registro de usuario
-app.post('/listacursos',(req,res) => {
-	res.render('listacursos',{
+app.post('/crearcursos',(req,res) => {
+	res.render('crearcursos',{
 		id : req.body.id,
 		nombre : req.body.nombre,
 		descripcion : req.body.descripcion,
@@ -49,19 +57,31 @@ app.post('/listacursos',(req,res) => {
 		intensidad : req.body.intensidad
 
 	});
-	res.redirect('/home');
+  res.redirect('listacursos');
 });
 
 
+// Página de lista de usuarios
 
-app.get('/registro', (req, res) =>{
-	res.render('registro',{
-		nombre : req.body.nombre,
-		email : req.body.email,
-		cedula : req.body.cedula,
-		telefono : req.body.telefono
+app.post('/usuarios',(req,res) => {
+	res.render('usuarios',{
+		nombre:req.body.nombre,
+		email:req.body.email,
+		cedula: req.body.cedula,
+		telefono:req.body.telefono
+
 	});
+	res.redirect('listarusuario');
 });
+
+app.get('/registro',(req,res)=>{
+	res.render('registro');
+});
+
+app.get('/listarusuario', (req, res) =>{
+  res.render('listarusuario')
+});
+
 
 
 
@@ -72,9 +92,10 @@ app.post('/home',(req,res) => {
 
 // VISTAS DE CURSOS
 // Página de listado de cursos y registro
-app.post('/cursos',(req, res) =>{
-  res.render('cursos')
-});
+// app.post('/cursos',(req, res) =>{
+//   res.render('cursos')
+// });
+
 
 
 //pagina de registro
@@ -92,18 +113,18 @@ app.post('/validaLogin',(req,res) => {
 
 // Página de Registro de cursos
 // Pendiente crear esta vista
-app.post('/listacursos',(req,res) => {
-	res.render('listacursos',{
-		id : req.body.id,
-		nombre : req.body.nombre,
-		descripcion : req.body.descripcion,
-		valor : req.body.valor,
-		modalidad : req.body.modalidad,
-		intensidad : req.body.intensidad
+// app.post('/listacursos',(req,res) => {
+// 	res.render('listacursos',{
+// 		id : req.body.id,
+// 		nombre : req.body.nombre,
+// 		descripcion : req.body.descripcion,
+// 		valor : req.body.valor,
+// 		modalidad : req.body.modalidad,
+// 		intensidad : req.body.intensidad
 
-	});
-	res.redirect('/home');
-});
+// 	});
+// 	res.redirect('/home');
+// });
 
 
 // VISTAS DE CURSOS FIN
@@ -116,6 +137,6 @@ app.get('*',(req,res) => {
 });
 
 
-app.listen(3000,() => {
-    console.log("escuchando en el 3000");
+app.listen(5000,() => {
+    console.log("escuchando en el 5000");
 });
